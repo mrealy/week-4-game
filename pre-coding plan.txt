@@ -1,0 +1,22 @@
+RPG Pre-coding Plan
+
+Row 1: Header (Star wars or other, Firefly?)
+
+Row 2: Your Character
+Initially has four characters to choose from
+Each character has Name, portrait, and HP surrounded by border
+once a character is chosen, the other three character objects move to row 3.
+“Your character” pseudo-footer
+
+Row 3: Enemies to attack
+Initially has blank space that will receive three enemies
+“Enemies Available to Attack” pseudo-footer
+
+Row 4: Fight Section
+“Fight Section” header
+Attack Button
+Attack gains 8 damage on each click (doesn't reset with opponent)
+Opponent will strike
+Dmaul [25dmg, 180 HP]
+LSWalker [5 dmg, 100 HP]
+Dsididius [20 dmg, 

@@ -11,29 +11,65 @@
 <!-- Set the page to the width of the device and set the zoon level -->
 <meta name="viewport" content="width = device-width, initial-scale = 1">
 
-<title> </title>
+<title> Firefly Browser RPG game </title>
 
 <!-- Link to bootstrap -->
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
  
 <!-- Link to JQuery -->
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+<script src="assets/javascript/game.js"></script>
 
 </head>
 
 <body>
 
+<div class="container">	
+	<!-- Header Row -->
+	<div class="row">
+
+		<h1 class="pageHeader borders"> Firefly Browser RPG </h1>
+
+	</div>
+</div> 
+
 <div class="container">
+	<!-- Your character row -->
+	<div class="row borders">
+		<!-- Select your character / Your character header -->
+		<h1 class="urCharHeader"> Select your character </h1>
 
-	<div id="something"></div>
+		<div class="urCharacter">
+			<button class="char1" onclick="clickCounter()"></button>
+			<button class="char2" onclick="clickCounter()"></button>
+			<button class="char3" onclick="clickCounter()"></button>
+			<button class="char4" onclick="clickCounter()"></button>
 
+			<p id="clickCounter"></p>
 
+		</div>
+	</div>
+</div>
+	
+<div class="container">
+	<!-- Potential Opponents row -->
+	<div class="row borders"> 
+		<!-- Select your opponent header -->
+		<h1 id="opponents"> Available opponents </h1>
 
+		<div class="opponents"></div>
+	</div>
+</div>
 
+<div class="container">
+	<!-- Defender row -->
+	<div class="row borders">
+		<h1 id="opponent"> Current Opponent </h1>
 
-
-</div> <!-- container -->
-
+		<div class="opponent"> </div>
+	</div>
+</div>
 
 </body>
 
