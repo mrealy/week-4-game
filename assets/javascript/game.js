@@ -1,3 +1,37 @@
+	// if selCharPhase is true :
+	//	1. click will call selectChar() to move all other objects to div.opponents
+	//		selectChar(btnClass) - all other buttons other than clicked button will move to .opponents div
+	//		selCharPhase = false;
+	//		selOppPhase = true;
+	//		
+
+	// if selOppPhase is true : 
+	//	1. click will call selectOpp() function
+	//		selectOpp(btnClass) - the button with btnClass will move to .opponent div
+	//		selOppPhase = false;
+	//		attOppPhase = true;
+	//
+	// if attOppPhase is true : 
+	//	1. click will either alert the message to click on opponent portrait or execute attOpponent function
+	//	  if .opponent char HP > 0
+	//		if btnClass = div.opponent.button.class
+	//			attOpponent();
+	//				
+	//		else
+	//			alert(click on opponent portrait to atack. Best to take on one enemy at a time)
+	//
+	//	  else (opponent is dead)
+	//		delete .opponent button from html
+	//		buttons deleted ++;
+	//		attOppPhase = false;
+	//		if buttons deleted < 3
+	//			selOppPhase = true;
+	//			attOppPhase = false;
+	//		else 
+	//			alert(you win!)
+	//			restart game
+	//		
+
 $(document).ready(function() {
 
 	var selCharPhase = true;
@@ -53,42 +87,14 @@ $(document).ready(function() {
 	function startGame () {
 		console.log('startGame function has been executed');
 		location.reload();
-
-	//set character objects with name, HP, and Attack properties.
-
-		// characters.char1 = {
-		// 	name: 'char1',
-		// 	HP: 120,
-		// 	Attack: 15
-		// }	
-		// characters.char2 = {
-		// 	name: 'char2',
-		// 	HP: 100,
-		// 	Attack: 5
-		// }
-
-		// characters.char3 = {
-		// 	name: 'char3',
-		// 	HP: 150,
-		// 	Attack: 20
-		// }
-
-		// characters.char4 = {
-		// 	name: 'char4',
-		// 	HP: 180,
-		// 	Attack: 25
-		// }
-		//console.log('objects have been defined: ' + objChar1.name + objChar2.name + objChar3.name + objChar4.name);
-
 	};
+
 	//this function sets the clicked buttons class in var btnClass (ex. click button.char1 - btnClass: .char1)
     $(document).on('click', 'button', function() { 
-    	//code goes here, this refers to the button that was clicked
+    	
     	var btnClass = '.' + $(this).attr('class');
     	var objSelector = $(this).attr('class');
-    	//console.log('Clicked button class: ' + btnClass);
-    	//objSelector = 'characters' + btnClass + '.name';
-    	//console.log(characters.attr('char1'));
+
 
     	if (selCharPhase) {
 			selectChar(btnClass);
@@ -150,87 +156,8 @@ $(document).ready(function() {
 		}
     	
     });
-	//console.log('clicks 0: ' + clicks + ' and oppSelected ' + oppSelected);
-
-	// if selCharPhase is true :
-	//	1. click will call selectChar() to move all other objects to div.opponents
-	//		selectChar(btnClass) - all other buttons other than clicked button will move to .opponents div
-	//		selCharPhase = false;
-	//		selOppPhase = true;
-	//		
-
-	// if selOppPhase is true : 
-	//	1. click will call selectOpp() function
-	//		selectOpp(btnClass) - the button with btnClass will move to .opponent div
-	//		selOppPhase = false;
-	//		attOppPhase = true;
-	//
-	// if attOppPhase is true : 
-	//	1. click will either alert the message to click on opponent portrait or execute attOpponent function
-	//	  if .opponent char HP > 0
-	//		if btnClass = div.opponent.button.class
-	//			attOpponent();
-	//				
-	//		else
-	//			alert(click on opponent portrait to atack. Best to take on one enemy at a time)
-	//
-	//	  else (opponent is dead)
-	//		delete .opponent button from html
-	//		buttons deleted ++;
-	//		attOppPhase = false;
-	//		if buttons deleted < 3
-	//			selOppPhase = true;
-	//			attOppPhase = false;
-	//		else 
-	//			alert(you win!)
-	//			restart game
-	//		
-	// if (oppSelected === false) {
-
-	// 	$('button').on('click', clickCounter);
-	// 	console.log('oppSelected at check is ' + oppSelected);
-	// } else {
-	// 	return false;
-	// 	console.log('oppSelected at check is ' + oppSelected);
-	// }
 
 
-	
-
-
-
-	// function clickCounter() {
-	// 	clicks++;
-	// 	console.log('Amount of clicks from clickCounter is now ' + clicks);
-	// 	var btnClass = '.' + $(this).attr('class');
-	// 	console.log('btnClass is '+ btnClass);
-	// 	if (clicks === 1) {
-	// 		selectChar(btnClass);
-	// 	}
-
-	// 	if ((clicks > 1) && (oppSelected === false)) {
-	// 		//oppSelected = selectOpponent(btnClass)
-	// 		oppSelected = selectOpponent(btnClass);
-	// 		console.log('oppSelected set successfully set to ' + oppSelected);
-			
-	// 	} else if ((clicks > 1) && (oppSelected === true)) {
-
-	// 		// if opponent div is clicked execute attOpponent function
-	// 		$('div.opponent').find('button').click(attOpponent(btnClass));
-	// 		// $('div.opponent').find('button').click(function(e) {
-	// 		// 	console.log('successfully attacked the opponent!');
-	// 		// 	//attOpponent();
-	// 		// });
-
-	// 		// else if other buttons are clicked alert('Attack Current Opponent')
-	// 		$('div.opponents, div.urCharacter').find('button').click(function() {
-	// 			alert('Click on your opponent\'s portrait to attack them!');
-	// 		});
-
-
-	// 	}
-
-	// }
 
 	function selectChar (btnClass) {
 
@@ -291,27 +218,6 @@ $(document).ready(function() {
 			$('button').remove();
 			startGame();
 		}
-		//console.log('objSelect is ' + oppObject + ' and oppHP is ' + oppHP);
-			// if attOppPhase is true : 
-		// console.log('You have succesfully attacked btnClass '+ btnClass)
-		// var charHP = $('.urCharacter').find('button').attr('HP');
-		// charAtt;
-		// var oppHP = $('.opponent').find('button').attr('HP');
-		// var oppAtt = $('.opponent').find('button').attr('Attack');
-		// console.log('character HP/Attack is '+ charHP + '/' + charAtt + ' and opponent HP/Att is ' + oppHP + '/' + oppAtt);
-		// var newCharHP = charHP - oppAtt;
-		// var newOppHP = oppHP - charAtt;
-
-		// console.log('end of attOpponent function: charHP/charAtt ' + newCharHP + '/' + charAtt + ' and enemy HP/att is ' + newOppHP + '/' + oppAtt);
-		// $(btnClass).attr({
-		// 	HP: parseInt(newOppHP)
-		// });
-		// $('.urCharacter.button').attr({
-		// 	HP: parseInt(newCharHP)
-		// });
-		// $(btnClass).html($(btnClass)).attr('HP');
-		// $('.urCharacter.button').html($('urCharacter.button').attr('HP'));
-		// charAtt = charAtt + 8;
 
 	};
 
