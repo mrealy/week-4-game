@@ -4,7 +4,13 @@ Row 1: Header (Star wars or other, Firefly?)
 
 Row 2: Your Character
 Initially has four characters to choose from
+	buttons - .char1 .char2 .char3 .char4
+
+clicking on a button will call the selectChar function and then will no longer 
+	this will move all other buttons to Row 3
+	
 Each character has Name, portrait, and HP surrounded by border
+	
 once a character is chosen, the other three character objects move to row 3.
 “Your character” pseudo-footer
 
@@ -19,4 +25,4 @@ Attack gains 8 damage on each click (doesn't reset with opponent)
 Opponent will strike
 Dmaul [25dmg, 180 HP]
 LSWalker [5 dmg, 100 HP]
-Dsididius [20 dmg, 
+Dsididius [20 dmg, 150 HP]

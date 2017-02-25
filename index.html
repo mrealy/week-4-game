@@ -11,7 +11,7 @@
 <!-- Set the page to the width of the device and set the zoon level -->
 <meta name="viewport" content="width = device-width, initial-scale = 1">
 
-<title> Firefly Browser RPG game </title>
+<title> Sci-Fi Stand-off RPG game </title>
 
 <!-- Link to bootstrap -->
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -29,7 +29,7 @@
 	<!-- Header Row -->
 	<div class="row">
 
-		<h1 class="pageHeader borders"> Firefly Browser RPG </h1>
+		<h1 class="pageHeader borders" style="text-align: center"> Sci-Fi Stand-Off Browser RPG </h1>
 
 	</div>
 </div> 
@@ -41,12 +41,10 @@
 		<h1 class="urCharHeader"> Select your character </h1>
 
 		<div class="urCharacter">
-			<button class="char1" onclick="clickCounter()"></button>
-			<button class="char2" onclick="clickCounter()"></button>
-			<button class="char3" onclick="clickCounter()"></button>
-			<button class="char4" onclick="clickCounter()"></button>
-
-			<p id="clickCounter"></p>
+			<button class="char1" id="char1HP"></button>
+			<button class="char2" id="char2HP"></button>
+			<button class="char3" id="char3HP"></button>
+			<button class="char4" id="char4HP"></button>
 
 		</div>
 	</div>
@@ -66,7 +64,7 @@
 	<!-- Defender row -->
 	<div class="row borders">
 		<h1 id="opponent"> Current Opponent </h1>
-
+		<p id="combatLog"> </p>
 		<div class="opponent"> </div>
 	</div>
 </div>
